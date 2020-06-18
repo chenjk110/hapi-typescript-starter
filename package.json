@@ -1,0 +1,24 @@
+{
+  "name": "hapi-typescript-starter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e ts -w src --exec 'node --require ts-node/register src/bootstrap.ts'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/hapi": "^18.0.3",
+    "@types/hapi-pino": "^8.0.0",
+    "@types/joi": "^14.3.4",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "hapi-pino": "^8.0.1"
+  }
+}
