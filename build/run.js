@@ -9,7 +9,8 @@ const dirRoot = resolve(__dirname, '..')
 const dirDest = resolve(dirRoot, 'dist')
 const dirSrc = resolve(dirRoot, 'src')
 const assetFiles = [
-    '.env',
+    'env',
+    'env.dev'
 ].map(name => resolve(dirRoot, name))
 
 /**

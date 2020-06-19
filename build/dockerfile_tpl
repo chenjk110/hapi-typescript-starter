@@ -1,0 +1,18 @@
+# updated: {{UPDATED}}
+# by {{AUTHOR}}
+
+FROM {{IMAGE_NAME}}:{{IMAGE_TAG_NAME}}
+
+EXPOSE {{PORT_VALUE}}
+
+ENV SRC_DIR {{SOURCE_DIR_NAME}}
+
+ENV DIST_DIR {{DEST_DIR_NAME}}
+
+ADD ${SRC_DIR} ${DIST_DIR}
+
+WORKDIR ${DIST_DIR}
+
+RUN [ "npm", "install" ]
+
+CMD [ "node", "bootstrap.js" ]

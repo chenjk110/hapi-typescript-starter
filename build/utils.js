@@ -8,8 +8,9 @@ const tsCostMark = () => {
         tsEnd: Date.now(),
         tsCost: 0,
         toString() {
-            const cost = Math.round(this.tsCost / 1000)
-            return chalk.cyan(`\n( total cost: ${cost}ms )\n`)
+            const sec = Math.floor(this.tsCost / 1000)
+            const ms = this.tsCost % 1000
+            return `\n(total cost: ${sec}s${ms}ms)\n`
         },
         done() {
             this.tsEnd = Date.now()
@@ -30,7 +31,7 @@ const infoError = (...args) => console.log(chalk.redBright(...args))
 const copyFiles = async (dirDest, fileSrcList, print = false) => {
     const cpTasks = fileSrcList.map((fileSrc, idx) => {
         const fileInfo = path.parse(fileSrc)
-        const fileDest = path.join(dirDest, fileInfo.name)
+        const fileDest = path.join(dirDest, fileInfo.base)
         let printDone = () => { }
         if (print) {
             const percent = `${idx + 1}/${fileSrcList.length}`
