@@ -1,4 +1,11 @@
 {
+    "compilerOptions": {
+        "inlineSourceMap": true,
+        "outDir": "dist",
+        "target": "ES2017",
+        "module": "CommonJS",
+        "lib": ["ESNext"]
+    },
     "typeAcquisition": {
         "include": [
             "./src/dto/*.ts"
@@ -9,5 +16,5 @@
     ],
     "ts-node": {
         "transpileOnly": true
-    }
+    },
 }

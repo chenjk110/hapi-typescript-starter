@@ -1,3 +1,5 @@
 export * from './setup-routes'
 export * from './setup-plugins'
 export * from './collect-files'
+export * from './setup-settings'
+export * from './envs'

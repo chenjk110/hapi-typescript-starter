@@ -1,7 +1,11 @@
 import { Server } from '@hapi/hapi'
-import { setupRoutes, setupPlugins } from './utils'
-
 import server from './server'
+import {
+    setupRoutes,
+    setupPlugins,
+    setupSettings,
+} from './utils'
+
 
 /**
  * bootstrap executor
@@ -16,6 +20,9 @@ async function bootstrap(server: Server) {
         // setup all route options
         setupRoutes(server)
     ])
+
+    // setup host and port
+    await setupSettings(server)
 
     await server.start()
 }
@@ -32,7 +39,6 @@ process
         console.error(err)
         process.exit(1)
     })
-
 
 /**
  * statup
