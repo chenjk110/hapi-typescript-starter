@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
-    },
     "typeAcquisition": {
         "include": [
-            "src/dto/*.ts"
+            "./src/dto/*.ts"
         ]
     },
+    "include": [
+        "./src/**/*.ts"
+    ],
     "ts-node": {
         "transpileOnly": true
     }

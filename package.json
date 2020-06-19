@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e ts -w src --exec 'node --require ts-node/register src/bootstrap.ts'"
+    "start": "nodemon -e ts -w src -w tsconfig.json --exec 'node --require ts-node/register src/bootstrap.ts'"
   },
   "keywords": [],
   "author": "",

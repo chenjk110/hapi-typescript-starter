@@ -2,7 +2,6 @@ import { Server } from '@hapi/hapi'
 import { setupRoutes, setupPlugins } from './utils'
 
 import server from './server'
-import routes from './routes'
 
 /**
  * bootstrap executor
@@ -15,7 +14,7 @@ async function bootstrap(server: Server) {
         // setup all plguins
         setupPlugins(server),
         // setup all route options
-        setupRoutes(server, await routes)
+        setupRoutes(server)
     ])
 
     await server.start()

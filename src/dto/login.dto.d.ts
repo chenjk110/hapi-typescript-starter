@@ -1,5 +1,5 @@
-declare namespace Dtos {
-    interface LoginBody {
+declare namespace DTOs {
+    interface ILoginBody {
         username: string
         password: string
     }
