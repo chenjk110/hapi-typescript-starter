@@ -80,3 +80,61 @@ export default pluginOpt;
 - `env.dev` -> `development mode`
 
 ## Define your Data Transfer Object (DTO) types
+
+```ts
+declare namespace DTOs {
+    interface ILoginBody {
+        username: string
+        password: string
+    }
+}
+```
+
+```ts
+declare namespace DTOs {
+    interface IResBase {
+        code: number
+        msg: string
+    }
+
+    interface IResData<D = any> extends IResBase {
+        data: D
+    }
+
+    interface IResPagination extends IResData {
+        pageCounts: number
+        pageIndex: number
+        pageSize: number
+    }
+}
+```
+
+## Dev & Build
+
+### 1. dev
+
+start up dev server by nodemon, ts-node.
+
+```bash
+npm start
+```
+or
+```bash
+npm run dev
+```
+
+### 2. build 
+
+compile src into dist with tsc.
+
+```bash
+npm run build
+```
+
+### 3. build:docker
+
+creating dockerfile and create Docker Image local.
+
+```bash
+npm run build:docker
+```
