@@ -44,8 +44,6 @@ const dockerfileNameReplacer = (tplStr) => {
         author: '{{AUTHOR}}'
     }
 
-    let lines = tplStr.split('\n')
-
     return {
         /**
          * replacement
@@ -54,11 +52,12 @@ const dockerfileNameReplacer = (tplStr) => {
          */
         replace(name, value) {
             const holder = dockerfileNames[name]
-            lines = lines.map(line => line.replace(holder, value))
+            const re = new RegExp(holder, 'g')
+            tplStr = tplStr.replace(re, value)
             return this
         },
         toString() {
-            return lines.join('\n')
+            return tplStr
         }
     }
 }
