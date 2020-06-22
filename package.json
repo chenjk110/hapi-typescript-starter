@@ -27,9 +27,11 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "@hapi/catbox-redis": "^5.0.5",
     "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
-    "hapi-pino": "^8.0.1"
+    "hapi-pino": "^8.0.1",
+    "hapi-rbac": "^3.0.0"
   }
 }
